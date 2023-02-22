@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'star-pad';
+  isPlay = false;
+
+  G = new Audio('../assets/G.mp3');
+
+  play(){
+    if(!this.isPlay){
+      this.G.play();
+      this.isPlay = true;
+    }else{
+      this.G.pause()
+    }
+  }
 }
